@@ -29,14 +29,13 @@ relu:
     j exit
     # Prologue
 
-# t0 = 1
 # t1 = offset
 
 loop_start:
 
 # a1 = 0 exit
 
-    beq a1, x0, exit
+    beq t1, x0, exit2
     
 # t2 = a0[t3]
     lw t2, 0(t3)
@@ -65,6 +64,6 @@ relu_set_zero:
 
 
     # Epilogue
-exit:
+exit2:
 
     jr ra
