@@ -9,6 +9,18 @@
 #   None
 # =================================================================
 abs:
+  # Load number from memory
+
+  lw t0 0(a0)
+  blt zero, t0, done
+
+  # Negate a0
+  sub t0, x0, t0
+
+  # Store number back to memory
+  sw t0 0(a0)
+
+done:
     # Prologue
 
     # PASTE HERE
