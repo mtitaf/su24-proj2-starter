@@ -17,19 +17,15 @@ relu:
 # t1 = loop(i)
 # t3 = *a0
     addi t1, a1, 0
-    add t3, a0, x0
-    
-    ebreak
+    add t3, a0, x0    
 
-
-
-# 1 < a1 loop_start
+# 0 < a1 loop_start
     blt x0, a1, loop_start
     li a0, 36
     j exit
     # Prologue
 
-# t1 = offset
+# t1 = i
 
 loop_start:
 
@@ -55,8 +51,8 @@ loop_start:
 
 relu_set_zero:
     sw x0, 0(t3)
-    addi t1, t1, 4
-    addi a1, a1, -1
+    addi t3, t3, 4
+    addi t1, t1, -1
     j loop_start
 
 
